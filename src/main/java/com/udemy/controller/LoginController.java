@@ -1,5 +1,6 @@
 package com.udemy.controller;
 
+import com.udemy.constants.ViewConstant;
 import com.udemy.model.UserCredential;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -32,7 +33,7 @@ public class LoginController {
         model.addAttribute("error", error);
         model.addAttribute("logout", logout);
         model.addAttribute("userCredentials", new UserCredential());
-        return "login";
+        return ViewConstant.LOGIN;
     }
 
     @PostMapping("/loginCheck")
@@ -42,7 +43,7 @@ public class LoginController {
 
         if(userCredential.getUserName().equals("user") &&
                 userCredential.getPassword().equals("user")){
-            return "contacts";
+            return ViewConstant.CONTACTS;
         }
 
         return "redirect:/login?error";
