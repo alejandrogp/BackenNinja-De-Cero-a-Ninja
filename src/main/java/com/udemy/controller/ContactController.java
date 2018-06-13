@@ -3,8 +3,10 @@ package com.udemy.controller;
 import com.udemy.constants.ViewConstant;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller("/contacts")
+@Controller
+@RequestMapping("/contacts")
 public class ContactController {
 
     @GetMapping("/contactform")
